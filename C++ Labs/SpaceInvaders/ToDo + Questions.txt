@@ -1,0 +1,26 @@
+to-do:
+
+ToAdd:
+	End-State:Win and Failure
+
+	
+extra:
+	Basic Menu System
+
+	Reset when hit
+
+	Sounds
+	
+	Basic animation?
+	
+	Boss?
+
+	Level system?
+
+	
+
+How can I do basic animation?
+Basic sounds?
+
+
+

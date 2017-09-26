@@ -1,0 +1,67 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.2
+//  \   \         Application : sch2hdl
+//  /   /         Filename : fulladd.vf
+// /___/   /\     Timestamp : 02/21/2016 18:38:32
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog "C:/Users/s144192/Dropbox/Courses/Year 2/Quartile 3/Computation 2/Computer Architecture/FullAdder/fulladd.vf" -w "C:/Users/s144192/Dropbox/Courses/Year 2/Quartile 3/Computation 2/Computer Architecture/FullAdder/fulladd.sch"
+//Design Name: fulladd
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module fulladd(a, 
+               b, 
+               c);
+
+    input a;
+    input b;
+    input c;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   wire XLXN_4;
+   wire XLXN_6;
+   wire XLXN_7;
+   wire XLXN_8;
+   wire XLXN_13;
+   
+   OR2  XLXI_1 (.I0(b), 
+               .I1(a), 
+               .O(XLXN_1));
+   OR2  XLXI_2 (.I0(XLXN_4), 
+               .I1(XLXN_2), 
+               .O(XLXN_6));
+   OR3  XLXI_3 (.I0(c), 
+               .I1(b), 
+               .I2(a), 
+               .O(XLXN_8));
+   AND2  XLXI_4 (.I0(c), 
+                .I1(XLXN_1), 
+                .O(XLXN_2));
+   AND2  XLXI_5 (.I0(b), 
+                .I1(a), 
+                .O(XLXN_4));
+   AND2  XLXI_6 (.I0(XLXN_8), 
+                .I1(XLXN_6), 
+                .O(XLXN_7));
+   AND3  XLXI_7 (.I0(c), 
+                .I1(b), 
+                .I2(a), 
+                .O(XLXN_13));
+   NOR2  XLXI_8 (.I0(XLXN_13), 
+                .I1(XLXN_7), 
+                .O());
+   INV  XLXI_9 (.I(XLXN_6), 
+               .O());
+endmodule
